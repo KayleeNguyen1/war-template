@@ -1,5 +1,6 @@
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * Emulate a deck of cards
@@ -20,7 +21,7 @@ public class Deck
     }
     
     public void initializeNewDeck() {
-        String[] suits = {"Hearts","Clubs","Spades","Diamonds"};
+        String[] suits = {"Spades","Clubs","Diamonds","Hearts"};
         int[] ranks = {2,3,4,5,6,7,8,9,10,11,12,13,14};
         String[] faces = {"2","3","4","5","6","7","8","9","10","Jack","Queen","King","Ace"};
         for (String suit : suits) {
@@ -44,7 +45,7 @@ public class Deck
      * Shuffles the cards in the deck
      */
     public void shuffle() {
-        // To be written
+        Collections.shuffle(this.cards);
     }
     
     /**
@@ -70,7 +71,7 @@ public class Deck
      */
     public Card dealCardFromDeck() {
         // To be written 
-        return null;
+        return this.cards.remove(0);
     }
     
     /**
@@ -79,6 +80,7 @@ public class Deck
      */
     public void addCardToDeck(Card cardToAdd) {
         // To be written
+        this.cards.add(cardToAdd);
     }
     
 }
