@@ -96,14 +96,16 @@ public class War {
                         playCards();
                     }
                 } else if (playerCard.getRank() > botCard.getRank()) {
-                    System.out.println("You win the round!"
-                            + "\n Type 'take' to take your cards.");
+                    System.out.println("\n"
+                            + "\nYou win the round!"
+                            + "\nType 'take' to take your cards.");
                     ans = scanner.next();
                     do {
                         if (ans.contains("take")) {
                             answered = true;
                         } else {
-                            System.out.println("Please just type 'take', it will not change anything.");
+                            System.out.println("Please just type 'take' next time, it will not change anything.");
+                            answered = false;
                         }
                     } while (answered = false);
                     takeCards(player);
@@ -137,7 +139,7 @@ public class War {
             if (ans.contains("play")) {
                 answered = true;
             } else {
-                System.out.println("Please just type 'play', it will not change anything.");
+                System.out.println("Please just type 'play' next time, it will not change anything.");
             }
         } while (answered = false);
 
