@@ -84,7 +84,7 @@ public class War {
             do {
                 if (playerCard.getRank() == botCard.getRank()) {
                     System.out.println("\nYou are now in war."
-                        + "\nType 'play' 4 times please.");
+                            + "\nType 'play' 4 times please.");
                     if (player.getDeckSize() < 3) {
                         System.out.println("\nYou don't have enough cards for a War.");
                         winMessage(bot);
@@ -96,7 +96,16 @@ public class War {
                         playCards();
                     }
                 } else if (playerCard.getRank() > botCard.getRank()) {
-                    System.out.println("You win the round!");
+                    System.out.println("You win the round!"
+                            + "\n Type 'take' to take your cards.");
+                    ans = scanner.next();
+                    do {
+                        if (ans.contains("take")) {
+                            answered = true;
+                        } else {
+                            System.out.println("Please just type 'take', it will not change anything.");
+                        }
+                    } while (answered = false);
                     takeCards(player);
                     inWar = false;
                     cardsPlayed.clear();
